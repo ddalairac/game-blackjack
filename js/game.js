@@ -1,11 +1,12 @@
-var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("stage");
 var ctx = canvas.getContext("2d");
 
-ctx.canvas.width = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+// Full screen
+// ctx.canvas.width = window.innerWidth;
+// ctx.canvas.height = window.innerHeight;
 
 
-// Dibujar cartas
+// Dibujar elemento
 x = 0
 function draw() {
     ctx.beginPath();
@@ -19,6 +20,7 @@ function frameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // Dibujar canvas
     draw()
+    if (x > canvas.width) x = -130
     x++
 }
 
